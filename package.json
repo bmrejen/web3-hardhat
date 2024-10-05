@@ -2,7 +2,6 @@
   "name": "web3-hardhat",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
   "main": "deploy.ts",
   "engines": {
     "node": ">=20.0.0"
@@ -10,7 +9,8 @@
   "scripts": {
     "compile": "solcjs --bin --abi --include-path node_modules/ --base-path . --output-dir build SimpleStorage.sol",
     "dev": "npx tsx watch deploy.ts",
-    "hardhat": "npx hardhat run deploy.ts"
+    "hardhat": "npx hardhat run scripts/deploy.ts",
+    "compile:hardhat": "npx hardhat compile"
   },
   "keywords": [],
   "author": "",
@@ -21,8 +21,14 @@
     "solc": "^0.8.14-fixed"
   },
   "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@types/chai": "^4.3.20",
+    "@types/mocha": "^10.0.8",
+    "@types/node": "^22.7.4",
+    "chai": "^4.3.7",
     "hardhat": "^2.22.12",
     "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2",
     "typescript": "^5.6.2"
   }
 }

@@ -1,4 +1,4 @@
-import { ethers } from "ethers";
+import { ethers } from "hardhat";
 import fs from "node:fs";
 import dotenv from "dotenv";
 dotenv.config();
@@ -7,13 +7,12 @@ const RPC_URL = process.env.RPC_URL || "";
 console.log("RPC_URL:", RPC_URL);
 const PRIVATE_KEY = process.env.PRIVATE_KEY || "";
 
-try {
-  await main();
-  process.exit(0);
-} catch (error) {
-  console.error(error);
-  process.exitCode = 1;
-}
+main()
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
 
 async function main() {
   const provider = new ethers.JsonRpcProvider(RPC_URL);
