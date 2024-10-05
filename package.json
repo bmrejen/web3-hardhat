@@ -4,6 +4,9 @@
   "description": "",
   "type": "module",
   "main": "deploy.ts",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "compile": "solcjs --bin --abi --include-path node_modules/ --base-path . --output-dir build SimpleStorage.sol",
     "dev": "npx tsx watch deploy.ts",
