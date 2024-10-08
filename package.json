@@ -7,14 +7,16 @@
     "node": ">=20.0.0"
   },
   "scripts": {
-    "compile:solc": "solcjs --bin --abi --include-path node_modules/ --base-path . --output-dir build SimpleStorage.sol",
-    "dev": "nodemon ./scripts/deploy.ts",
-    "hardhat": "npx hardhat run scripts/deploy.ts",
     "compile": "npx hardhat compile",
     "deploy:ganache": "npx hardhat ignition deploy ./ignition/modules/SimpleStorage.ts --network ganache",
     "deploy:hardhat": "npx hardhat ignition deploy ./ignition/modules/SimpleStorage.ts",
     "deploy:sepolia": "npx hardhat ignition deploy ./ignition/modules/SimpleStorage.ts --network sepolia --verify",
-    "run:node": "npx hardhat node --network hardhat"
+    "deploy:localhost": "npx hardhat ignition deploy ./ignition/modules/SimpleStorage.ts --network localhost",
+    "run:node": "npx hardhat node",
+    "test": "npx hardhat test",
+    "test:watch": "npx hardhat watch tests/SimpleStorage.ts",
+    "scripts": "npx hardhat scripts",
+    "block-number": "npx hardhat block-number"
   },
   "keywords": [],
   "author": "",
