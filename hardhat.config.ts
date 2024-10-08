@@ -1,7 +1,7 @@
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 import "dotenv/config";
-import process from "process";
+import "@nomiclabs/hardhat-solhint";
 import "./tasks/block-number";
 
 if (!process.env.GANACHE_URL || !process.env.PRIVATE_KEY || !process.env.GANACHE_PRIVATE_KEY) {
